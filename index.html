@@ -13,6 +13,7 @@
   --muted: #5d6a60;
   --line: #d9ddd0;
   --accent: #a7322a;
+  --leaf: #3f6b3a;
   --font-display: "Young Serif", Georgia, "Times New Roman", serif;
   --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
@@ -24,6 +25,7 @@
     --muted: #a3afa5;
     --line: #34403a;
     --accent: #e0736a;
+    --leaf: #8fbf86;
     color-scheme: dark;
   }
 }
@@ -38,8 +40,12 @@ body {
   padding: 32px 16px 56px;
 }
 main { max-width: 680px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 28px; }
+.doodles { width: 100%; max-width: 360px; height: auto; color: var(--leaf); margin-bottom: 12px; }
+.doodles .accent, .doodles .steam { stroke: var(--accent); }
+.doodles .dot { fill: currentColor; stroke: none; }
 h1 { font-family: var(--font-display); font-weight: 400; font-size: 2.2rem; margin: 0 0 4px; }
-.sub { color: var(--muted); margin: 0 0 28px; }
+.sub { color: var(--muted); margin: 0; }
 ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 a.card {
   display: block;
@@ -57,8 +63,44 @@ a.card:hover, a.card:focus-visible { border-color: var(--accent); }
 </head>
 <body>
 <main>
-  <h1>Our Recipe Book</h1>
-  <p class="sub">Sonia and Stafford's recipes, full batch and half batch.</p>
+  <header>
+    <svg class="doodles" viewBox="0 0 360 70" role="img" aria-label="Teacup, biscuit, pasta bowl, noodle box and a whisk" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- teacup -->
+      <g transform="translate(8 8)">
+        <path d="M6 22h38v10a16 16 0 0 1-16 16h-6A16 16 0 0 1 6 32z"/>
+        <path d="M44 26h5a6 6 0 0 1 0 12h-6"/>
+        <path d="M2 54h46"/>
+        <path d="M18 4c-3 4 3 6 0 10M30 4c-3 4 3 6 0 10" class="steam"/>
+      </g>
+      <!-- biscuit -->
+      <g transform="translate(78 12)">
+        <circle cx="24" cy="24" r="22"/>
+        <path d="M24 2v4M24 42v4M2 24h4M42 24h4M8 8l3 3M37 37l3 3M40 8l-3 3M11 37l-3 3" />
+        <circle cx="18" cy="20" r="1.5" class="dot"/><circle cx="30" cy="18" r="1.5" class="dot"/><circle cx="24" cy="30" r="1.5" class="dot"/><circle cx="16" cy="32" r="1.5" class="dot"/><circle cx="32" cy="32" r="1.5" class="dot"/>
+      </g>
+      <!-- pasta bowl with twirl -->
+      <g transform="translate(142 8)">
+        <path d="M4 30h48a24 24 0 0 1-48 0z"/>
+        <path d="M14 30c0-10 8-14 14-14s14 4 14 14M20 30c0-6 4-9 8-9s8 3 8 9" class="accent"/>
+        <path d="M18 56h20"/>
+      </g>
+      <!-- takeaway noodle box with chopsticks -->
+      <g transform="translate(212 8)">
+        <path d="M6 24h44l-6 32H12z"/>
+        <path d="M4 24h48"/>
+        <path d="M14 24c2-8 8-10 14-10s12 2 14 10" class="accent"/>
+        <path d="M34 2l-8 22M42 4l-12 20" />
+      </g>
+      <!-- whisk -->
+      <g transform="translate(286 6)">
+        <path d="M26 2v18"/>
+        <path d="M26 20c-16 0-16 38 0 38s16-38 0-38z"/>
+        <path d="M26 20c-7 6-7 32 0 38M26 20c7 6 7 32 0 38"/>
+      </g>
+    </svg>
+    <h1>Our Recipe Book</h1>
+    <p class="sub">Sonia &amp; Stafford's kitchen &mdash; tea, pasta, noodles and everything in between.</p>
+  </header>
   <ul>
     <!-- To add a recipe: save its page in recipes/ and copy this block -->
     <li>
