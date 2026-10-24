@@ -72,7 +72,8 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .steam { stroke: var(--muted); }
 footer { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--muted); font-size: 0.95rem; text-align: center; }
 footer svg { width: 96px; height: 64px; }
-.icons { display: flex; align-items: center; gap: 16px; flex: none; }
+.title-row { flex-direction: column; align-items: flex-start; }
+.icons { display: grid; grid-template-columns: repeat(3, 88px); justify-items: center; align-items: center; margin-left: -4px; }
 .title-row .icons svg { width: auto; height: 60px; }
 .note { margin: 10px 0 0; font-style: italic; color: var(--blue); }
 .fossil { fill: none; stroke: var(--stone); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
