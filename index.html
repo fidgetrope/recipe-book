@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Recipe Book</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #f5f6f0;
+  --surface: #ffffff;
+  --ink: #1f2a22;
+  --muted: #5d6a60;
+  --line: #d9ddd0;
+  --accent: #a7322a;
+  --font-display: "Young Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151b17;
+    --surface: #1e2620;
+    --ink: #eaeee4;
+    --muted: #a3afa5;
+    --line: #34403a;
+    --accent: #e0736a;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  padding: 32px 16px 56px;
+}
+main { max-width: 680px; margin: 0 auto; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 2.2rem; margin: 0 0 4px; }
+.sub { color: var(--muted); margin: 0 0 28px; }
+ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+a.card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  color: inherit;
+  text-decoration: none;
+}
+a.card:hover, a.card:focus-visible { border-color: var(--accent); }
+.name { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent); }
+.desc { color: var(--muted); font-size: 0.95rem; margin-top: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Our Recipe Book</h1>
+  <p class="sub">Sonia and Stafford's recipes, full batch and half batch.</p>
+  <ul>
+    <!-- To add a recipe: save its page in recipes/ and copy this block -->
+    <li>
+      <a class="card" href="recipes/devon-dutch-apple-cake.html">
+        <div class="name">Devon Dutch Apple Cake</div>
+        <div class="desc">Full batch and half batch.</div>
+      </a>
+    </li>
+  </ul>
+</main>
+</body>
+</html>

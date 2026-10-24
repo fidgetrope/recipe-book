@@ -1,0 +1,242 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Devon Dutch Apple Cake</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow recipe column, a two-way switch under the title, ingredients then method, bake note set apart */
+:root {
+  --bg: #f5f6f0;
+  --surface: #ffffff;
+  --ink: #1f2a22;
+  --muted: #5d6a60;
+  --line: #d9ddd0;
+  --accent: #a7322a;
+  --accent-ink: #ffffff;
+  --leaf: #3f6b3a;
+  --note-bg: #eaf0e1;
+  --blue: #2d4a6b;
+  --font-display: "Young Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151b17;
+    --surface: #1e2620;
+    --ink: #eaeee4;
+    --muted: #a3afa5;
+    --line: #34403a;
+    --accent: #e0736a;
+    --accent-ink: #1a0f0e;
+    --leaf: #8fbf86;
+    --note-bg: #243024;
+    --blue: #8fb0d6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151b17;
+  --surface: #1e2620;
+  --ink: #eaeee4;
+  --muted: #a3afa5;
+  --line: #34403a;
+  --accent: #e0736a;
+  --accent-ink: #1a0f0e;
+  --leaf: #8fbf86;
+  --note-bg: #243024;
+  --blue: #8fb0d6;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  padding-block: 32px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.2rem, 7vw, 3rem); line-height: 1.05; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.45rem; margin: 0 0 12px; display: flex; align-items: center; gap: 14px; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.ticking { height: 12px; background: repeating-linear-gradient(90deg, var(--blue) 0 2px, transparent 2px 7px); opacity: 0.85; }
+.title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.title-row svg { flex: none; width: 76px; height: 76px; }
+.apple, .leaf, .cup, .steam { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.apple { stroke: var(--accent); }
+.leaf { stroke: var(--leaf); }
+.cup { stroke: var(--blue); }
+.steam { stroke: var(--muted); }
+footer { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--muted); font-size: 0.95rem; text-align: center; }
+footer svg { width: 96px; height: 64px; }
+footer p { margin: 0; }
+.source { color: var(--muted); font-size: 0.95rem; margin: 10px 0 0; }
+.source a { color: var(--accent); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; padding: 14px 0 0; list-style: none; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.facts li { min-width: 0; }
+.facts b { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+.switch { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.switch button { font: inherit; font-weight: 600; color: var(--ink); background: transparent; border: 0; border-radius: 7px; padding: 12px 10px; cursor: pointer; min-width: 0; }
+.switch button small { display: block; font-weight: 400; font-size: 0.8rem; color: var(--muted); }
+.switch button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.switch button[aria-pressed="true"] small { color: inherit; opacity: 0.85; }
+.switch button:focus-visible, .check:focus-within { outline: 3px solid var(--leaf); outline-offset: 2px; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; box-shadow: inset 0 0 0 6px var(--surface), inset 0 0 0 7px var(--line); padding: 26px max(20px, 5vw); }
+.ings { list-style: none; margin: 0; padding: 0; }
+.ings li { border-bottom: 1px solid var(--line); }
+.ings li:last-child { border-bottom: 0; }
+.check { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; cursor: pointer; border-radius: 6px; }
+.check input { accent-color: var(--accent); width: 18px; height: 18px; flex: none; transform: translateY(3px); }
+.qty { font-weight: 600; min-width: 5.2rem; flex: none; font-variant-numeric: tabular-nums; }
+.what { min-width: 0; }
+.what em { color: var(--muted); font-style: normal; }
+.check input:checked ~ .qty, .check input:checked ~ .what { opacity: 0.45; text-decoration: line-through; }
+
+.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2rem 1fr; gap: 12px; }
+.steps li::before { content: counter(s); font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1; color: var(--accent); }
+.steps p { margin: 0; min-width: 0; }
+
+.bake { background: var(--note-bg); border-radius: 3px; border-left: 4px solid var(--leaf); padding: 18px max(20px, 5vw); display: flex; flex-direction: column; gap: 6px; }
+.bake strong { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; }
+.bake p { margin: 0; }
+.bake .small { color: var(--muted); font-size: 0.92rem; }
+.badge { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--leaf); }
+@media (prefers-reduced-motion: no-preference) { .switch button { transition: background 0.15s; } }
+</style>
+
+<main>
+  <div class="ticking" aria-hidden="true"></div>
+  <header>
+    <div class="title-row">
+      <h1>Devon Dutch Apple Cake</h1>
+      <svg viewBox="0 0 80 80" aria-hidden="true"><path class="apple" d="M40 26 C30 18 14 24 14 42 C14 58 26 72 36 70 C38 69.5 42 69.5 44 70 C54 72 66 58 66 42 C66 24 50 18 40 26 Z"/><path class="apple" d="M22 42 C22 36 25 31 30 29"/><path class="apple" d="M40 26 C40 20 42 14 46 9"/><path class="leaf" d="M43 17 C50 8 62 8 66 12 C62 20 50 22 43 17 Z"/><path class="leaf" d="M45 16 C52 12 58 11 63 11"/></svg>
+    </div>
+    <p class="source">Edd Kimber's Dorset apple cake, from <a href="https://www.bbcgoodfood.com/recipes/dorset-apple-cake" target="_blank" rel="noopener">BBC Good Food</a>. Metric, no nuts.</p>
+  </header>
+
+  <ul class="facts" id="facts"></ul>
+
+  <div class="switch" role="group" aria-label="Batch size">
+    <button type="button" id="b-full" aria-pressed="true">Full batch<small>Serves 8</small></button>
+    <button type="button" id="b-half" aria-pressed="false">Half batch<small>Serves 4</small></button>
+  </div>
+
+  <section class="panel" aria-labelledby="h-ing">
+    <h2 id="h-ing">Ingredients</h2>
+    <ul class="ings" id="ings"></ul>
+  </section>
+
+  <section class="panel" aria-labelledby="h-method">
+    <h2 id="h-method">Method</h2>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section class="bake" aria-label="Bake time">
+    <span class="badge">My bake time</span>
+    <strong id="bake-main"></strong>
+    <p id="bake-sub"></p>
+    <p class="small" id="bake-src"></p>
+  </section>
+
+  <footer>
+    <svg viewBox="0 0 120 80" aria-hidden="true"><path class="steam" d="M46 28 C41 21 51 17 46 10"/><path class="steam" d="M60 28 C55 21 65 17 60 10"/><path class="cup" d="M26 34 H86 C86 56 76 66 56 66 C36 66 26 56 26 34 Z"/><path class="cup" d="M86 40 C102 38 102 56 83 57"/><path class="cup" d="M28 44 H84"/><path class="cup" d="M12 68 C30 77 82 77 100 68"/></svg>
+    <p>Best served warm, with a pot of tea.</p>
+  </footer>
+</main>
+
+<script>
+var BATCHES = {
+  full: {
+    serves: "8",
+    tin: "Deep 20cm round tin",
+    ings: [
+      ["115g", "unsalted butter", "diced and chilled, plus extra for the tin"],
+      ["225g", "self-raising flour", ""],
+      ["2 tsp", "ground cinnamon", ""],
+      ["115g", "light brown sugar", ""],
+      ["1", "large egg", "beaten"],
+      ["6 to 8 tbsp", "milk", "add gradually"],
+      ["225g", "Bramley or Granny Smith apples", "peeled, cored and diced"],
+      ["2 tbsp", "demerara sugar", "optional"]
+    ],
+    steps: [
+      "Heat the oven to 180C / 160C fan / gas 4. Butter and line a deep 20cm cake tin with baking parchment.",
+      "Mix the flour and cinnamon together in a large bowl. Add the butter and rub into the flour using your fingers, until it resembles fine breadcrumbs. Stir in the light brown sugar. Beat in the egg followed by 6 to 8 tbsp of milk, adding it gradually until you have a smooth, thick batter.",
+      "Add the apples and mix to combine. Scrape the batter into the prepared tin and gently level out. Sprinkle over the demerara sugar, if using, and bake until golden and a skewer inserted into the middle comes out clean (see bake time below).",
+      "Allow to cool in the tin for 15 mins and then carefully turn out onto a wire rack to cool further. Best served still warm with a little custard."
+    ],
+    bakeMain: "About 45 minutes",
+    bakeSub: "Check with a skewer from 40 minutes. It should come out clean and the top should be golden.",
+    bakeSrc: "The recipe itself says 30 to 40 minutes. 45 is how long you usually bake it."
+  },
+  half: {
+    serves: "4",
+    tin: "15cm round tin, about 7cm deep",
+    ings: [
+      ["60g", "unsalted butter", "diced and chilled, plus extra for the tin"],
+      ["115g", "self-raising flour", ""],
+      ["1 tsp", "ground cinnamon", ""],
+      ["60g", "light brown sugar", ""],
+      ["½", "large egg", "or 1 small egg, beaten"],
+      ["3 to 4 tbsp", "milk", "add gradually"],
+      ["115g", "Bramley or Granny Smith apples", "peeled, cored and diced"],
+      ["1 tbsp", "demerara sugar", "optional"]
+    ],
+    steps: [
+      "Heat the oven to 180C / 160C fan / gas 4. Butter and line a deep 15cm cake tin with baking parchment. A 20cm tin will do, but the cake will be about half as tall and bakes faster.",
+      "Mix the flour and cinnamon together in a large bowl. Add the butter and rub into the flour using your fingers, until it resembles fine breadcrumbs. Stir in the light brown sugar. Beat the egg in a cup first. If it is a large one, use half of it (about 2 tbsp); a small egg goes in whole. Beat it in, followed by 3 to 4 tbsp of milk, adding it gradually until you have a smooth, thick batter.",
+      "Add the apples and mix to combine. Scrape the batter into the prepared tin and gently level out. Sprinkle over the demerara sugar, if using, and bake until golden and a skewer inserted into the middle comes out clean (see bake time below).",
+      "Allow to cool in the tin for 15 mins and then carefully turn out onto a wire rack to cool further. Best served still warm with a little custard."
+    ],
+    bakeMain: "Start checking at 30 to 35 minutes",
+    bakeSub: "Same depth of batter in a smaller tin, so it may be done before your usual 45. Skewer clean and golden on top means it is ready. If not, give it 5 more minutes and test again.",
+    bakeSrc: "This timing is my estimate for the half batch. It is not from the original recipe."
+  }
+};
+
+function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+
+function render(key) {
+  var b = BATCHES[key];
+  var facts = document.getElementById("facts");
+  facts.innerHTML = "";
+  [["Serves", b.serves], ["Prep", "20 mins"], ["Oven", "180C / 160C fan / gas 4"], ["Tin", b.tin]].forEach(function (f) {
+    var li = el("li"); li.appendChild(el("b", "", f[0])); li.appendChild(document.createTextNode(f[1])); facts.appendChild(li);
+  });
+  var ul = document.getElementById("ings");
+  ul.innerHTML = "";
+  b.ings.forEach(function (i, n) {
+    var li = el("li");
+    var label = el("label", "check");
+    var cb = el("input"); cb.type = "checkbox"; cb.id = "ing-" + key + "-" + n;
+    var q = el("span", "qty", i[0]);
+    var w = el("span", "what", i[1]);
+    if (i[2]) { w.appendChild(document.createTextNode(" ")); w.appendChild(el("em", "", "(" + i[2] + ")")); }
+    label.appendChild(cb); label.appendChild(q); label.appendChild(w);
+    li.appendChild(label); ul.appendChild(li);
+  });
+  var ol = document.getElementById("steps");
+  ol.innerHTML = "";
+  b.steps.forEach(function (s) { var li = el("li"); li.appendChild(el("p", "", s)); ol.appendChild(li); });
+  document.getElementById("bake-main").textContent = b.bakeMain;
+  document.getElementById("bake-sub").textContent = b.bakeSub;
+  document.getElementById("bake-src").textContent = b.bakeSrc;
+  document.getElementById("b-full").setAttribute("aria-pressed", key === "full");
+  document.getElementById("b-half").setAttribute("aria-pressed", key === "half");
+  try { localStorage.setItem("apple-cake-batch", key); } catch (e) {}
+}
+
+document.getElementById("b-full").addEventListener("click", function () { render("full"); });
+document.getElementById("b-half").addEventListener("click", function () { render("half"); });
+
+var start = "full";
+try { var saved = localStorage.getItem("apple-cake-batch"); if (saved === "half" || saved === "full") start = saved; } catch (e) {}
+render(start);
+</script>
+
+</body></html>
