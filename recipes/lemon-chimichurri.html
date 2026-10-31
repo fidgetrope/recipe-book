@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lemon Chimichurri</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #f5f6f0;
+  --surface: #ffffff;
+  --ink: #1f2a22;
+  --muted: #5d6a60;
+  --line: #d9ddd0;
+  --accent: #a7322a;
+  --accent-ink: #ffffff;
+  --leaf: #3f6b3a;
+  --note-bg: #eaf0e1;
+  --blue: #2d4a6b;
+  --crust: #9a6a2f;
+  --font-display: "Young Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151b17;
+    --surface: #1e2620;
+    --ink: #eaeee4;
+    --muted: #a3afa5;
+    --line: #34403a;
+    --accent: #e0736a;
+    --accent-ink: #1a0f0e;
+    --leaf: #8fbf86;
+    --note-bg: #243024;
+    --blue: #8fb0d6;
+    --crust: #d9a15b;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  padding: 32px 16px 56px;
+}
+main { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.2rem, 7vw, 3rem); line-height: 1.05; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.45rem; margin: 0 0 12px; display: flex; align-items: center; gap: 14px; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.back { color: var(--muted); font-size: 0.95rem; text-decoration: none; }
+.back:hover { color: var(--accent); }
+.ticking { height: 12px; background: repeating-linear-gradient(90deg, var(--blue) 0 2px, transparent 2px 7px); opacity: 0.85; }
+.title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.title-row svg { flex: none; width: 96px; height: 76px; }
+.crust, .seed, .ear, .steam, .pan { fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.crust { stroke: var(--crust); }
+.pan { stroke: var(--blue); }
+.ear { stroke: var(--leaf); }
+.seed { stroke: var(--accent); }
+.steam { stroke: var(--muted); }
+footer { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--muted); font-size: 0.95rem; text-align: center; }
+footer svg { width: 96px; height: 72px; }
+footer p { margin: 0; }
+.source { color: var(--muted); font-size: 0.95rem; margin: 10px 0 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; padding: 14px 0 0; list-style: none; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.facts li { min-width: 0; }
+.facts b { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; box-shadow: inset 0 0 0 6px var(--surface), inset 0 0 0 7px var(--line); padding: 26px max(20px, 5vw); }
+.ings { list-style: none; margin: 0; padding: 0; }
+.ings li { border-bottom: 1px solid var(--line); }
+.ings li:last-child { border-bottom: 0; }
+.check { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; cursor: pointer; border-radius: 6px; }
+.check:focus-within { outline: 3px solid var(--leaf); outline-offset: 2px; }
+.check input { accent-color: var(--accent); width: 18px; height: 18px; flex: none; transform: translateY(3px); }
+.qty { font-weight: 600; min-width: 5.2rem; flex: none; font-variant-numeric: tabular-nums; }
+.what { min-width: 0; }
+.what em { color: var(--muted); font-style: normal; }
+.check input:checked ~ .qty, .check input:checked ~ .what { opacity: 0.45; text-decoration: line-through; }
+
+.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2rem 1fr; gap: 12px; }
+.steps li::before { content: counter(s); font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1; color: var(--accent); }
+.steps p { margin: 0; min-width: 0; }
+.steps .time { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--leaf); margin-right: 6px; }
+
+.bake { background: var(--note-bg); border-radius: 3px; border-left: 4px solid var(--leaf); padding: 18px max(20px, 5vw); display: flex; flex-direction: column; gap: 6px; }
+.bake strong { font-family: var(--font-display); font-weight: 400; font-size: 1.25rem; }
+.bake p { margin: 0; }
+.bake .small { color: var(--muted); font-size: 0.92rem; }
+.badge { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--leaf); }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../index.html">&larr; All recipes</a>
+  <div class="ticking" aria-hidden="true"></div>
+  <header>
+    <div class="title-row">
+      <h1>Lemon Chimichurri</h1>
+      <svg viewBox="0 0 96 76" aria-hidden="true">
+        <!-- lemon -->
+        <path class="crust" d="M10 40 C10 22 28 12 48 12 C68 12 86 22 86 40 C86 58 68 68 48 68 C28 68 10 58 10 40 Z"/>
+        <path class="crust" d="M6 40 h4 M86 40 h4"/>
+        <path class="crust" d="M30 40 C30 30 38 24 48 24 M66 40 C66 50 58 56 48 56"/>
+        <!-- leaf -->
+        <path class="ear" d="M52 12 C54 4 64 2 72 6 C70 14 60 16 52 12 Z"/>
+      </svg>
+    </div>
+    <p class="source">A fresh, dairy-free sauce for steak and chips, with no red wine vinegar. Enough for two steaks.</p>
+  </header>
+
+  <ul class="facts">
+    <li><b>Serves</b>2 steaks</li>
+    <li><b>Prep</b>10 mins</li>
+    <li><b>Rest</b>10 mins</li>
+    <li><b>Cooking</b>none</li>
+  </ul>
+
+  <section class="panel" aria-labelledby="h-ing">
+    <h2 id="h-ing">Ingredients</h2>
+    <ul class="ings">
+      <li><label class="check"><input type="checkbox"><span class="qty">30g</span><span class="what">fresh parsley <em>(a big handful, finely chopped)</em></span></label></li>
+      <li><label class="check"><input type="checkbox"><span class="qty">2 cloves</span><span class="what">garlic <em>(finely chopped or crushed)</em></span></label></li>
+      <li><label class="check"><input type="checkbox"><span class="qty">4 tbsp</span><span class="what">olive oil</span></label></li>
+      <li><label class="check"><input type="checkbox"><span class="qty">3 tbsp</span><span class="what">lemon juice <em>(about 1 lemon)</em></span></label></li>
+      <li><label class="check"><input type="checkbox"><span class="qty">1 tsp</span><span class="what">balsamic vinegar <em>(a small splash, in place of red wine vinegar)</em></span></label></li>
+      <li><label class="check"><input type="checkbox"><span class="qty">1 tsp</span><span class="what">dried oregano</span></label></li>
+      <li><label class="check"><input type="checkbox"><span class="qty">&frac12; tsp</span><span class="what">chilli flakes <em>(optional)</em></span></label></li>
+      <li><label class="check"><input type="checkbox"><span class="qty">pinch</span><span class="what">salt and black pepper</span></label></li>
+    </ul>
+  </section>
+
+  <section class="panel" aria-labelledby="h-method">
+    <h2 id="h-method">Method</h2>
+    <ol class="steps">
+      <li><p>Stir the parsley and garlic into the olive oil.</p></li>
+      <li><p>Add the lemon juice, balsamic, oregano, salt, pepper and chilli flakes if using.</p></li>
+      <li><p>Taste. Add more lemon if it needs more zing, or a little more balsamic if it needs mellowing.</p></li>
+      <li><p><span class="time">10 mins</span>Leave for about 10 minutes so the flavours settle, then spoon over the steaks.</p></li>
+    </ol>
+  </section>
+
+  <section class="bake" aria-label="Serving note">
+    <span class="badge">A note on the vinegar</span>
+    <strong>Balsamic is sweeter and darker</strong>
+    <p>Chimichurri normally uses red wine vinegar. Balsamic makes a slightly sweeter, darker sauce, so start with 1 tsp and let the lemon do most of the work. White wine vinegar also works in place of the lemon.</p>
+  </section>
+
+  <footer>
+    <svg viewBox="0 0 120 80" aria-hidden="true">
+      <!-- steak -->
+      <path class="seed" d="M18 42 C18 20 48 10 78 16 C104 22 108 48 90 62 C70 74 28 70 18 42 Z"/>
+      <path class="seed" d="M34 40 C36 28 54 24 70 28 C84 32 84 46 72 52"/>
+      <circle class="seed" cx="52" cy="40" r="6"/>
+    </svg>
+    <p>Lovely with steak and chips.</p>
+  </footer>
+</main>
+</body>
+</html>
